@@ -1,0 +1,29 @@
+<div class="form-container">
+  <!--<h2>{{ id ? 'Editar Tarefa' : 'Nova Tarefa' }}</h2>-->
+
+  <form [formGroup]="taskForm">
+    <label for="titulo">Título</label>
+    <input id="title" formControlName="titulo" type="text" required />
+
+    <label for="descricao">Descrição</label>
+    <textarea id="description" formControlName="descricao"></textarea>
+
+    <label for="responsavel">Responsável</label>
+    <input id="responsible" formControlName="responsavel" type="text" required />
+
+    <label for="dataLimite">Data Limite</label>
+    <input id="dueDate" formControlName="dataLimite" type="date" required />
+
+    <!--<label for="status">Status</label>
+    <select id="status" formControlName="status">
+      <option value="PENDING">Pendente</option>
+      <option value="IN_PROGRESS">Em Andamento</option>
+      <option value="COMPLETED">Concluída</option>
+    </select>-->
+
+    <button type="button" [disabled]="taskForm.invalid" (click)="onCriarTarefa()" >
+      <!--{{ id ? 'Atualizar' : 'Salvar' }}-->
+       Criar
+    </button>
+  </form>
+</div>
